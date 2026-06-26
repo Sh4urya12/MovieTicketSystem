@@ -1,7 +1,7 @@
 package com.example.Movie_Booking_System.ClassLayer;
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDateTime;
+import java.time.*;
 
 @Entity
 @Data
