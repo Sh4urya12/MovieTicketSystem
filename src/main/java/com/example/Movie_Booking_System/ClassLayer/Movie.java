@@ -1,6 +1,8 @@
 package com.example.Movie_Booking_System.ClassLayer;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,7 +26,7 @@ public class Movie
     private Integer availableSeats;
     private Double ticketPrice;
 
-    @JsonIgnore
+    @JsonManagedReference
     @OneToMany(mappedBy = "movie")
     private List<Booking> bookings;
 }

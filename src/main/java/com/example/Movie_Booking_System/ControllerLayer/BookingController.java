@@ -1,6 +1,8 @@
 package com.example.Movie_Booking_System.ControllerLayer;
 
 import com.example.Movie_Booking_System.ClassLayer.Booking;
+import com.example.Movie_Booking_System.DTOlayer.BookingDTO;
+import com.example.Movie_Booking_System.DTOlayer.EmailDTO;
 import com.example.Movie_Booking_System.ServiceLayer.BookingService;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
@@ -15,15 +17,10 @@ public class BookingController
     @Autowired
     BookingService bookingService;
 
-    @PostMapping
-    public String bookTicket(@RequestParam  Integer userId, @RequestParam Integer movieId, @RequestParam Integer seatsRequested)
+    @PostMapping("/book")
+    public EmailDTO bookTicket(@RequestBody BookingDTO bookingDTO)
     {
-        return bookingService.bookTicket
-                (
-                userId,
-                movieId,
-                seatsRequested
-        );
+        return bookingService.bookTicket(bookingDTO);
     }
 
     @GetMapping
@@ -31,6 +28,5 @@ public class BookingController
     {
         return bookingService.getBookings();
     }
-
 }
 

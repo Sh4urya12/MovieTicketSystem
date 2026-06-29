@@ -23,7 +23,7 @@ public class MovieScheduler
         {
             System.out.println( movie.getMovieName() + " -> Seats Left: " + movie.getAvailableSeats());
         }
-        System.out.println("------------------");
+        System.out.println("----------------------");
     }
 
 }

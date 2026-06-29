@@ -1,11 +1,12 @@
 package com.example.Movie_Booking_System.ControllerLayer;
 
 import com.example.Movie_Booking_System.ClassLayer.User;
+import com.example.Movie_Booking_System.DTOlayer.UserDTO;
 import com.example.Movie_Booking_System.ServiceLayer.UserService;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/users")
@@ -14,12 +15,12 @@ public class UserController
     @Autowired
     UserService userService;
 
-    @PostMapping
-    public User addUser(@RequestBody User user)
+    @PostMapping("/users")
+    public User addUser(@RequestBody UserDTO userDTO)
     {
-        return userService.addUser(user);
+        return userService.addUser(userDTO);
     }
-
+    
     @GetMapping
     public List<User> getUsers()
     {
