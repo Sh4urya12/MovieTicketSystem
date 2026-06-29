@@ -17,7 +17,7 @@ public class BookingController
     @Autowired
     BookingService bookingService;
 
-    @PostMapping("/book")
+    @PostMapping
     public EmailDTO bookTicket(@RequestBody BookingDTO bookingDTO)
     {
         return bookingService.bookTicket(bookingDTO);
