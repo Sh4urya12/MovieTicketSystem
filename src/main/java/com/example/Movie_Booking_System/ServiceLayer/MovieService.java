@@ -3,6 +3,7 @@ package com.example.Movie_Booking_System.ServiceLayer;
 import com.example.Movie_Booking_System.ClassLayer.Movie;
 import com.example.Movie_Booking_System.DTOlayer.MovieDTO;
 import com.example.Movie_Booking_System.RepositoryLayer.MovieRepository;
+import org.springframework.cache.annotation.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
@@ -13,6 +14,8 @@ public class MovieService
 {
     @Autowired
     MovieRepository movieRepository;
+
+    @CacheEvict(value = "movies", allEntries = true)
 
     public Movie addMovie(MovieDTO movieDTO)
     {
@@ -25,9 +28,13 @@ public class MovieService
         movie.setTicketPrice(movieDTO.getTicketPrice());
         return movieRepository.save(movie);
     }
+    @Cacheable ("movies")
 
     public List<Movie> getMovies()
     {
+        System.out.println("Fetching From MySQL");
         return movieRepository.findAll();
+
     }
+
 }
