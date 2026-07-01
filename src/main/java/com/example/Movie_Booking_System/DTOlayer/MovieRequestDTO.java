@@ -6,7 +6,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class MovieDTO
+public class MovieRequestDTO
 {
     private String movieName;
     private String genre;

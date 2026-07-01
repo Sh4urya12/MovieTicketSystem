@@ -1,7 +1,8 @@
 package com.example.Movie_Booking_System.ControllerLayer;
 
 import com.example.Movie_Booking_System.ClassLayer.Movie;
-import com.example.Movie_Booking_System.DTOlayer.MovieDTO;
+import com.example.Movie_Booking_System.DTOlayer.MovieRequestDTO;
+import com.example.Movie_Booking_System.DTOlayer.MovieResponseDTO;
 import com.example.Movie_Booking_System.ServiceLayer.MovieService;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +20,13 @@ public class MovieController {
 
     @PostMapping
 
-    public Movie addMovie(@RequestBody MovieDTO movieDTO)
+    public Movie addMovie(@RequestBody MovieRequestDTO movieRequestDTO)
     {
-        return movieService.addMovie(movieDTO);
+        return movieService.addMovie(movieRequestDTO);
     }
 
     @GetMapping
-    public List<Movie> getMovies()
+    public List<MovieResponseDTO> getMovies()
     {
         return movieService.getMovies();
     }

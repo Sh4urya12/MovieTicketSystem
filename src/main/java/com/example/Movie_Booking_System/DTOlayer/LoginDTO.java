@@ -6,9 +6,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class BookingDTO
+public class LoginDTO
 {
-    private Integer userId;
-    private Integer movieId;
-    private Integer seatsRequested;
+    private String email;
+    private String password;
 }

@@ -6,11 +6,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class UserDTO
+public class UserRequestDTO
 {
     private String name;
+    private String phone;
     private String email;
     private String pass;
-    private String phone;
 }
 

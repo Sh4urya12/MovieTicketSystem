@@ -26,7 +26,6 @@ public class Movie
     private Integer availableSeats;
     private Double ticketPrice;
 
-    @JsonManagedReference
     @OneToMany(mappedBy = "movie")
     private List<Booking> bookings;
 }
