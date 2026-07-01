@@ -4,6 +4,7 @@ import com.example.Movie_Booking_System.ClassLayer.Movie;
 import com.example.Movie_Booking_System.DTOlayer.MovieRequestDTO;
 import com.example.Movie_Booking_System.DTOlayer.MovieResponseDTO;
 import com.example.Movie_Booking_System.ServiceLayer.MovieService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class MovieController {
 
     @PostMapping
 
-    public Movie addMovie(@RequestBody MovieRequestDTO movieRequestDTO)
+    public Movie addMovie( @Valid @RequestBody MovieRequestDTO movieRequestDTO)
     {
         return movieService.addMovie(movieRequestDTO);
     }

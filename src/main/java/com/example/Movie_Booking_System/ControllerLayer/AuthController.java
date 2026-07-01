@@ -3,6 +3,7 @@ package com.example.Movie_Booking_System.ControllerLayer;
 import com.example.Movie_Booking_System.DTOlayer.LoginDTO;
 import com.example.Movie_Booking_System.SecurityLayer.JwtUtil;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.*;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class AuthController
 
     @PostMapping("/login")
 
-    public String login(@RequestBody LoginDTO loginDTO)
+    public String login( @Valid @RequestBody LoginDTO loginDTO)
     {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
 

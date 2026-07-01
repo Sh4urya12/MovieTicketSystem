@@ -5,6 +5,7 @@ import com.example.Movie_Booking_System.DTOlayer.BookingRequestDTO;
 import com.example.Movie_Booking_System.DTOlayer.BookingResponseDTO;
 import com.example.Movie_Booking_System.DTOlayer.EmailDTO;
 import com.example.Movie_Booking_System.ServiceLayer.BookingService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class BookingController
     BookingService bookingService;
 
     @PostMapping("/book")
-    public EmailDTO bookTicket(@RequestBody BookingRequestDTO bookingRequestDTO)
+    public EmailDTO bookTicket( @Valid @RequestBody BookingRequestDTO bookingRequestDTO)
     {
         return bookingService.bookTicket(bookingRequestDTO);
     }

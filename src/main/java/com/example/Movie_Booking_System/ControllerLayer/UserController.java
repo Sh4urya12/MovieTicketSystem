@@ -4,6 +4,7 @@ import com.example.Movie_Booking_System.ClassLayer.User;
 import com.example.Movie_Booking_System.DTOlayer.UserRequestDTO;
 import com.example.Movie_Booking_System.DTOlayer.UserResponseDTO;
 import com.example.Movie_Booking_System.ServiceLayer.UserService;
+import jakarta.validation.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class UserController
     UserService userService;
 
     @PostMapping("/add")
-    public User addUser(@RequestBody UserRequestDTO userRequestDTO)
+    public User addUser( @Valid @RequestBody UserRequestDTO userRequestDTO)
     {
         return userService.addUser(userRequestDTO);
     }
