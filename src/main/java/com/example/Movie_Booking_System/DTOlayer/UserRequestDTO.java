@@ -20,6 +20,6 @@ public class UserRequestDTO
     private String email;
 
     @Size(min = 4, message = "Password must be minimum 4 characters")
-    private String pass;
+    private String password;
 }
 

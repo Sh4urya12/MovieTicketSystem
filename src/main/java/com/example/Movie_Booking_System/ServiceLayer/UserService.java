@@ -25,7 +25,7 @@ public class UserService
         User user = new User();
         user.setName(userRequestDTO.getName());
         user.setEmail(userRequestDTO.getEmail());
-        user.setPass(passwordEncoder.encode( userRequestDTO.getPass() ));
+        user.setPass(passwordEncoder.encode( userRequestDTO.getPassword() ));
         user.setPhone(userRequestDTO.getPhone());
         user.setRole("USER");
         return userRepository.save(user);

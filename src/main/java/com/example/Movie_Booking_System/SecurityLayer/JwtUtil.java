@@ -12,17 +12,13 @@ import java.util.Date;
 
 public class JwtUtil
 {
-
     private final String SECRET_KEY = "mysecretkeymysecretkeymysecretkey12345";
     private final long EXPIRATION_TIME = 1000 * 60 * 60;
-
 
     private Key getSignKey()
     {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
     }
-
-
 
     public String generateToken(String email)
     {
@@ -30,8 +26,6 @@ public class JwtUtil
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
     }
-
-
 
     public String extractEmail(String token)
     {
@@ -42,8 +36,6 @@ public class JwtUtil
                 .getBody()
                 .getSubject();
     }
-
-
 
     public boolean validateToken(String token)
     {

@@ -1,6 +1,7 @@
 package com.example.Movie_Booking_System.ControllerLayer;
 
 import com.example.Movie_Booking_System.ClassLayer.User;
+import com.example.Movie_Booking_System.DTOlayer.SearchAndFilterDTO;
 import com.example.Movie_Booking_System.DTOlayer.UserRequestDTO;
 import com.example.Movie_Booking_System.DTOlayer.UserResponseDTO;
 import com.example.Movie_Booking_System.ServiceLayer.UserService;
